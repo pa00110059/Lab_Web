@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Khalturin Lab</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Noto+Sans:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        /* 聯絡頁面特定樣式 */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        
+        .contact-info {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-item {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-item .material-icons {
+            margin-right: 15px;
+            color: #1a73e8;
+            font-size: 24px;
+        }
+        
+        .contact-text h4 {
+            margin: 0 0 5px;
+            font-size: 18px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .contact-text p {
+            margin: 0;
+            color: #555;
+            line-height: 1.4;
+        }
+        
+        .contact-text a {
+            color: #1a73e8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-text a:hover {
+            color: #0c52a9;
+            text-decoration: underline;
+        }
+        
+        .map-container {
+            height: 100%;
+            min-height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .map-container {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>Khalturin Lab</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="join-us.html">Join Us</a></li>
+                    <li><a href="photos.html">Gallery</a></li>
+                    <li class="active"><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+                <img src="images/pexels-ayyeee-ayyeee-434363205-19571550.jpg" alt="Contact Banner" class="hero-image">
+                <div class="hero-content">
+                    <h2>Contact Us</h2>
+                    <p>Get in Touch with Our Laboratory</p>
+                </div>
+        </section>
+
+        <section class="section-intro">
+            <div class="section-intro-container">
+                <span class="section-intro-span">How to Reach the Khalturin Laboratory</span>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-intro">
+                    <p>If you have questions about our research, are interested in collaboration, or want to join our team, please don't hesitate to contact us. We are located at the Institute of Cellular and Organismic Biology at Academia Sinica in Taipei, Taiwan.</p>
+                </div>
+                
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="material-icons">location_on</i>
+                            <div class="contact-text">
+                                <h4>Address</h4>
+                                <p>Konstantin Khalturin Laboratory</p>
+                                <p>Institute of Cellular and Organismic Biology (ICOB)</p>
+                                <p>Academia Sinica</p>
+                                <p>128 Academia Road, Section 2, Nankang</p>
+                                <p>Taipei 115, Taiwan</p>
+                                <p>Room R426</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="material-icons">email</i>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p><a href="mailto:khalturin@gate.sinica.edu.tw">khalturin@gate.sinica.edu.tw</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="material-icons">phone</i>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p>Lab: +886-2-2789-9565</p>
+                                <p>Office: +886-2-2789-9566</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="material-icons">access_time</i>
+                            <div class="contact-text">
+                                <h4>Office Hours</h4>
+                                <p>Monday to Friday: 9:00 AM - 5:00 PM</p>
+                                <p>Weekends: Closed</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="material-icons">language</i>
+                            <div class="contact-text">
+                                <h4>Institute Website</h4>
+                                <p><a href="https://icob.sinica.edu.tw/Eng" target="_blank">Institute of Cellular and Organismic Biology</a></p>
+                                <p><a href="https://www.sinica.edu.tw/en" target="_blank">Academia Sinica</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2149.318826750236!2d121.61172060122948!3d25.043948011324005!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab45920c304f%3A0xe74094ff2645fd32!2sInstitute%20Of%20Cellular%20And%20Organismic%20Biology!5e0!3m2!1sen!2stw!4v1747125518205!5m2!1sen!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                    </div>
+                <div class="transportation-info">
+                    <h3>Transportation Information</h3>
+                    <div class="transportation-grid">
+                        <div class="transportation-item">
+                            <h4>By Public Transportation</h4>
+                            <ul>
+                                <li><strong>MRT:</strong> Take the Blue Line to Nangang Exhibition Center Station, then transfer to bus 205, 212, or 270 to Academia Sinica.</li>
+                                <li><strong>Bus:</strong> Routes 205, 212, 270, 617, 645, 646, 679, and 205(night) all stop at Academia Sinica.</li>
+                            </ul>
+                        </div>
+                        <div class="transportation-item">
+                            <h4>By Car</h4>
+                            <ul>
+                                <li><strong>From Taipei City:</strong> Take Keelung Road eastbound, which becomes Sec. 2, Academia Rd. Continue until you reach Academia Sinica.</li>
+                                <li><strong>From National Highway 1 (Freeway):</strong> Take the Nangang exit, then follow signs to Academia Sinica.</li>
+                                <li><strong>Parking:</strong> Visitor parking is available on campus with prior arrangement.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Konstantin Khalturin Laboratory, <a href="https://icob.sinica.edu.tw/Eng"><span>Institute of Cellular and Organismic Biology</span></a>, <a href="https://www.sinica.edu.tw/en">Academia Sinica</a></p>
+            <p>128 Academia Road, Section 2, Nankang, Taipei 115, R426</p>
+            <p>Email: khalturin@gate.sinica.edu.tw | Phone: +886-2-2789-9565</p>
+
+            <p>中央研究院細胞與個體生物學研究所</p>
+            <p>臺北市南港區研究院路二段128號</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 

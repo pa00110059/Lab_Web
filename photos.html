@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Khalturin Lab</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Noto+Sans:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        /* 照片集相關樣式 */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 0;
+            padding-bottom: 75%; /* 維持4:3比例 */
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            padding: 15px;
+            color: white;
+            font-size: 14px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .gallery-category {
+            margin-top: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .gallery-category h3 {
+            color: #1a73e8;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>Khalturin Lab</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="join-us.html">Join Us</a></li>
+                    <li class="active"><a href="photos.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            
+                <img src="images/pexels-martin-hacksteiner-2216843-4113415.jpg" alt="Gallery Banner" class="hero-image">
+                <div class="hero-content">
+                    <h2>Lab Gallery</h2>
+                    <p>Photos from Our Research and Activities</p>
+                </div>
+            
+        </section>
+
+        <section class="section-intro">
+            <div class="section-intro-container">
+                <span class="section-intro-span">Capturing Our Science Journey and Team Spirit</span>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <div class="container">
+                <div class="gallery-description">
+                    <p>Welcome to our photo gallery! Here you'll find images from our laboratory research, field work, microscopy, and team events. These photos showcase our scientific journey, our research subjects, and the people who make it all possible.</p>
+                </div>
+                
+                <div class="gallery-category">
+                    <h3>Research Organisms</h3>
+                    <div class="gallery-container">
+                        <div class="gallery-item">
+                            <img src="images/Hydra-Juliano-Lab-College-of-Biological-Sciences-UC-Davis-19.jpg" alt="Hydra specimen" class="gallery-image">
+                            <div class="gallery-caption">Hydra under fluorescent microscope showing nanos::EGFP expression</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/Life-cycle-stages-of-Aurelia-A-Life-cycle-scheme-depicting-sexual-reproduction-of.png" alt="Aurelia Life Cycle" class="gallery-image">
+                            <div class="gallery-caption">Life cycle stages of Aurelia jellyfish showing polyp, strobila and ephyra stages</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/fig-2-full.png" alt="Interstitial stem cells" class="gallery-image">
+                            <div class="gallery-caption">Interstitial stem cells visualized with fluorescent markers</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/24835124_m.jpg" alt="Marine organism" class="gallery-image">
+                            <div class="gallery-caption">Marine sample collection from our field work in Taiwan's coastal waters</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-category">
+                    <h3>Lab Activities</h3>
+                    <div class="gallery-container">
+                        <div class="gallery-item">
+                            <img src="images/24835124_m.jpg" alt="Lab meeting" class="gallery-image">
+                            <div class="gallery-caption">Weekly lab meeting with team members discussing recent results</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/24835124_m.jpg" alt="Sequencing prep" class="gallery-image">
+                            <div class="gallery-caption">Preparing samples for next-generation sequencing</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/24835124_m.jpg" alt="Microscopy session" class="gallery-image">
+                            <div class="gallery-caption">Microscopy session examining jellyfish development</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/24835124_m.jpg" alt="Field work" class="gallery-image">
+                            <div class="gallery-caption">Field work collecting marine specimens</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-category">
+                    <h3>Team Events</h3>
+                    <div class="gallery-container">
+                        <div class="gallery-item">
+                            <img src="images/24835124_m.jpg" alt="Lab dinner" class="gallery-image">
+                            <div class="gallery-caption">Lab dinner celebrating a successful publication</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/24835124_m.jpg" alt="Conference" class="gallery-image">
+                            <div class="gallery-caption">Team attending international conference on marine biology</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/24835124_m.jpg" alt="Lab retreat" class="gallery-image">
+                            <div class="gallery-caption">Annual lab retreat for strategic planning and team building</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/24835124_m.jpg" alt="Workshop" class="gallery-image">
+                            <div class="gallery-caption">Bioinformatics workshop led by lab members</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-category">
+                    <h3>Our Facilities</h3>
+                    <div class="gallery-container">
+                        <div class="gallery-item">
+                            <img src="images/24835124_m.jpg" alt="Main lab" class="gallery-image">
+                            <div class="gallery-caption">Main laboratory space at Academia Sinica</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/24835124_m.jpg" alt="Aquarium system" class="gallery-image">
+                            <div class="gallery-caption">Specialized marine aquarium systems for jellyfish culture</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/24835124_m.jpg" alt="Sequencing facility" class="gallery-image">
+                            <div class="gallery-caption">Next-generation sequencing facility</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/24835124_m.jpg" alt="Microscopy room" class="gallery-image">
+                            <div class="gallery-caption">Advanced microscopy suite</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Konstantin Khalturin Laboratory, <a href="https://icob.sinica.edu.tw/Eng"><span>Institute of Cellular and Organismic Biology</span></a>, <a href="https://www.sinica.edu.tw/en">Academia Sinica</a></p>
+            <p>128 Academia Road, Section 2, Nankang, Taipei 115, R426</p>
+            <p>Email: khalturin@gate.sinica.edu.tw | Phone: +886-2-2789-9565</p>
+
+            <p>中央研究院細胞與個體生物學研究所</p>
+            <p>臺北市南港區研究院路二段128號</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 

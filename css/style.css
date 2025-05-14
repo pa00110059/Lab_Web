@@ -1,0 +1,986 @@
+/* 通用樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', 'Noto Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #1a73e8;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0c52a9;
+}
+
+ul {
+    list-style: none;
+}
+
+/* 頭部樣式 */
+header {
+    background: transparent;
+    box-shadow: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+header.scrolled {
+    background-color: #0c52a9;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo h1 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+
+/* 修改導航樣式為水平展開 */
+.main-nav {
+    display: block;
+    position: static;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+    overflow: visible;
+}
+
+.main-nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.main-nav li {
+    margin: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.main-nav a {
+    color: #fff;
+    font-weight: 500;
+    padding: 5px 10px;
+    display: block;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #e5e5e5;
+    border-bottom: 2px solid #fff;
+}
+
+.main-nav .active a {
+    color: #fff;
+    font-weight: 700;
+    border-bottom: 2px solid #fff;
+}
+
+/* 移除漢堡菜單按鈕 */
+.menu-toggle {
+    display: none;
+}
+
+/* 調整主體內容的邊距，以適應固定導航欄 */
+main {
+    padding-top: 80px;
+}
+
+/* 頁面標題樣式，移除頂部間距 */
+.page-header {
+    margin-top: -80px;
+}
+
+/* 英雄區塊樣式 */
+.hero {
+    position: relative;
+    color: white;
+    text-align: center;
+    min-height: 400px;
+    overflow: hidden;
+    margin-top: 0;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* 這行是關鍵，讓圖片等比例填滿容器，多餘的部分會裁切 */
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+    z-index: 2;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 170px 20px 0;
+    position: relative;
+    z-index: 3;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.hero-text {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+/* 介紹區塊樣式 */
+.introduction {
+    padding: 60px 0;
+    background-color: white;
+}
+
+.introduction h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #1a73e8;
+    font-weight: 500;
+}
+
+.introduction p {
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.research-directions, .research-topics {
+    margin-bottom: 40px;
+}
+
+.research-directions ul, .research-topics ul {
+    padding-left: 20px;
+}
+
+.research-directions li, .research-topics li {
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+.research-directions li:before, .research-topics li:before {
+    content: '•';
+    color: #1a73e8;
+    position: absolute;
+    left: 0;
+    font-size: 20px;
+    line-height: 1;
+}
+
+/* 特色研究樣式 */
+.featured-research {
+    padding: 60px 0;
+    background-color: #f8f8f8;
+}
+
+.featured-research h3 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #1a73e8;
+    font-weight: 500;
+    text-align: center;
+}
+
+.research-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    align-items: stretch;
+}
+
+.research-item {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.research-item:hover {
+    transform: translateY(-5px);
+}
+
+.research-image {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 360px;
+}
+
+.research-image img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background: #fff;
+}
+
+.research-item:hover .research-image img {
+    transform: none;
+}
+
+.research-caption {
+    padding: 15px;
+}
+
+.research-caption p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* 最近出版物樣式 */
+.recent-publications {
+    padding: 60px 0;
+    background-color: white;
+}
+
+.recent-publications h3 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #1a73e8;
+    font-weight: 500;
+}
+
+.publication-list {
+    margin-bottom: 30px;
+}
+
+.publication-list li {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.publication-list li:last-child {
+    border-bottom: none;
+}
+
+.publication-list p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.publication-list strong {
+    font-weight: 700;
+}
+
+.publication-list em {
+    font-style: italic;
+}
+
+.view-more {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.view-more a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1a73e8;
+    color: white;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.view-more a:hover {
+    background-color: #0c52a9;
+}
+
+/* 研究頁面樣式 */
+.research-section {
+    padding: 60px 0;
+    background-color: white;
+}
+
+.research-intro {
+    margin-bottom: 50px;
+}
+
+.research-intro p {
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.research-area {
+    margin-bottom: 60px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 40px;
+}
+
+.research-area:last-child {
+    border-bottom: none;
+}
+
+.research-area h3 {
+    font-size: 26px;
+    color: #1a73e8;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.research-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.research-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.research-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.research-details {
+    flex: 2;
+    min-width: 300px;
+}
+
+.research-details p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.research-details h4 {
+    margin: 25px 0 15px;
+    font-size: 18px;
+    color: #333;
+    font-weight: 500;
+}
+
+.research-details ul {
+    padding-left: 20px;
+}
+
+.research-details li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.research-details li:before {
+    content: '•';
+    color: #1a73e8;
+    position: absolute;
+    left: 0;
+    font-size: 20px;
+}
+
+/* 頁面標題樣式 */
+.page-header {
+    background-color: #1a73e8;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.page-header h2 {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+/* 成員頁面樣式 */
+.people-section {
+    padding: 60px 0;
+    background-color: white;
+}
+
+/* 新的人員區塊樣式 */
+.person-block {
+    display: flex;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.person-block:last-child {
+    border-bottom: none;
+}
+
+.person-block .person-image {
+    width: 200px;
+    height: 200px;
+    margin-right: 30px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.person-block .person-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.person-block .person-info {
+    flex: 1;
+}
+
+.person-block .person-info h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #1a73e8;
+    font-weight: 500;
+}
+
+.person-block .person-info p {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* 頁腳樣式 */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    -webkit-text-size-adjust: 100%;
+    word-wrap: break-word;
+    font-variant-ligatures: none;
+    font-style: inherit;
+    font-weight: 400;
+    font-family: Lato, sans-serif;
+    line-height: 1.2;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 14px;
+    vertical-align: baseline;
+    text-decoration: underline
+}
+
+footer a:hover {
+    color: white;
+}
+
+/* 響應式設計 */
+@media (max-width: 992px) {
+    .hero h2 {
+        font-size: 32px;
+    }
+    
+    .hero-text {
+        font-size: 18px;
+    }
+    
+    .research-content {
+        flex-direction: column;
+    }
+    
+    .research-image {
+        margin-bottom: 20px;
+    }
+    
+    .research-showcase {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 10px;
+    }
+    
+    .logo h1 {
+        margin-bottom: 10px;
+    }
+    
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .main-nav a {
+        font-size: 14px;
+        padding: 5px 8px;
+    }
+    
+    .person-block {
+        flex-direction: column;
+    }
+    
+    .person-block .person-image {
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+        aspect-ratio: 1;
+        margin: 0 auto 20px;
+    }
+    
+    .person-block .person-info {
+        text-align: center;
+    }
+    
+    .people-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .hero {
+        padding: 80px 0;
+    }
+    
+    .hero h2 {
+        font-size: 28px;
+    }
+    
+    .hero p {
+        font-size: 16px;
+    }
+    
+    .hero-text {
+        font-size: 16px;
+    }
+    
+    .introduction, .featured-research, .recent-publications, .research-section {
+        padding: 40px 0;
+    }
+    
+    .research-area h3 {
+        font-size: 22px;
+    }
+    
+    .research-showcase {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 24px;
+    }
+    
+    .hero p {
+        font-size: 14px;
+    }
+    
+    .hero-text {
+        font-size: 14px;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .research-item {
+        margin-bottom: 20px;
+    }
+    
+    .main-nav ul {
+        gap: 5px;
+    }
+    
+    .main-nav a {
+        font-size: 13px;
+        padding: 4px 6px;
+    }
+}
+
+/* 校友和訪客區塊樣式 */
+.alumni-section, .visitors-section {
+   
+    border-radius: 6px;
+    padding: 32px 40px 32px 40px;
+    margin: 40px 0;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.alumni-section h3, .visitors-section h3 {
+    color: #222;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 32px;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+}
+
+.alumni-category, .visitors-section .alumni-category {
+    margin-bottom: 28px;
+}
+
+.alumni-category h4, .visitors-section .alumni-category h4 {
+    font-size: 18px;
+    color: #222;
+    font-weight: 600;
+    margin-bottom: 8px;
+    margin-top: 18px;
+    border: none;
+    padding: 0;
+}
+
+.alumni-list, .visitors-section .alumni-list {
+    list-style-type: none;
+    padding-left: 1.5em;
+    margin-bottom: 0;
+}
+
+.alumni-list li, .visitors-section .alumni-list li {
+    margin-bottom: 6px;
+    padding-left: 0.8em;
+    text-indent: -0.8em;
+    position: relative;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.alumni-list li:before, .visitors-section .alumni-list li:before {
+    content: "•";
+    color: #b08a4f;
+    font-size: 1em;
+    position: absolute;
+    left: 0;
+}
+
+@media (max-width: 900px) {
+    .alumni-section, .visitors-section {
+        padding: 24px 10px;
+    }
+}
+
+body main {
+    padding-top: 0;
+}
+
+.alumni-section {
+    margin: 40px 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.alumni-section h3 {
+    
+    border-radius: 6px;
+    padding: 24px 0 24px 0;
+    color: #222;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 32px;
+    margin-top: 0;
+    width: 100%;
+}
+
+.alumni-category {
+    margin-bottom: 28px;
+    max-width: 900px;
+    margin-left: 0;
+}
+
+.alumni-category h4 {
+    font-size: 18px;
+    color: #222;
+    font-weight: 600;
+    margin-bottom: 8px;
+    margin-top: 18px;
+    border: none;
+    padding: 0;
+}
+
+.alumni-list {
+    list-style-type: none;
+    padding-left: 1.5em;
+    margin-bottom: 0;
+}
+
+.alumni-list li {
+    margin-bottom: 6px;
+    padding-left: 0.8em;
+    text-indent: -0.8em;
+    position: relative;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.alumni-list li:before {
+    content: "•";
+    color: #b08a4f;
+    font-size: 1em;
+    position: absolute;
+    left: 0;
+}
+
+@media (max-width: 900px) {
+    .alumni-section h3 {
+        padding: 16px 0;
+    }
+    .alumni-section {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .alumni-category {
+        max-width: 100%;
+    }
+}
+
+.section-intro {
+    background: #3c60ad;
+}
+
+.section-intro-container {
+   
+    height: 60px;
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-intro-span{
+        -webkit-text-size-adjust: 100%;
+    word-wrap: break-word;
+    font-variant-ligatures: none;
+    font-style: inherit;
+    font-size: 12pt;
+    line-height: 1.56;
+    color: rgba(255,255,255,1);
+    box-sizing: border-box;
+    font-family: Lato, Arial;
+    font-weight: 700;
+
+}
+
+/* 出版物頁面樣式 */
+.publications-section {
+    padding: 60px 0;
+    background-color: white;
+}
+
+.publications-section h3 {
+    font-size: 24px;
+    margin: 40px 0 20px;
+    color: #1a73e8;
+    font-weight: 500;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.publications-section h3:first-child {
+    margin-top: 0;
+}
+
+/* 加入我們頁面樣式 */
+.join-us-section {
+    padding: 60px 0;
+    background-color: white;
+}
+
+.join-us-section h3 {
+    font-size: 24px;
+    margin: 40px 0 20px;
+    color: #1a73e8;
+    font-weight: 500;
+}
+
+.join-introduction {
+    margin-bottom: 40px;
+}
+
+.join-introduction p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.position-item, .visiting-section, .funding-section, .lab-environment {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.position-item:last-child, .lab-environment {
+    border-bottom: none;
+}
+
+.position-item h4, .visiting-section h4, .funding-section h4, .lab-environment h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 500;
+}
+
+.position-item p, .visiting-section p, .funding-section p, .lab-environment p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.position-item ul, .funding-section ul, .lab-environment ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.position-item li, .funding-section li, .lab-environment li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.position-item li:before, .funding-section li:before, .lab-environment li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #1a73e8;
+}
+
+/* 照片頁面樣式 */
+.gallery-section {
+    padding: 60px 0;
+    background-color: white;
+}
+
+.gallery-description {
+    margin-bottom: 40px;
+}
+
+.gallery-description p {
+    line-height: 1.6;
+}
+
+/* 聯絡頁面樣式 */
+.contact-section {
+    padding: 60px 0;
+    background-color: white;
+}
+
+.contact-intro {
+    margin-bottom: 40px;
+}
+
+.contact-intro p {
+    line-height: 1.6;
+}
+
+.transportation-info {
+    margin-top: 60px;
+}
+
+.transportation-info h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #1a73e8;
+    font-weight: 500;
+}
+
+.transportation-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.transportation-item h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 500;
+}
+
+.transportation-item ul {
+    padding-left: 20px;
+}
+
+.transportation-item li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 5px;
+    line-height: 1.5;
+}
+
+.transportation-item strong {
+    color: #1a73e8;
+}
+
+@media (max-width: 768px) {
+    .transportation-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
