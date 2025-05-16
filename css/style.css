@@ -69,7 +69,7 @@ header.scrolled {
 .main-nav {
     display: block;
     position: static;
-    width: auto;
+    width: 50%;
     height: auto;
     background-color: transparent;
     box-shadow: none;
@@ -112,6 +112,17 @@ header.scrolled {
 /* 移除漢堡菜單按鈕 */
 .menu-toggle {
     display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    background: none;
+    border: none;
+    padding: 5px;
+    z-index: 101;
+}
+
+.menu-toggle .material-icons {
+    font-size: 28px;
 }
 
 /* 調整主體內容的邊距，以適應固定導航欄 */
@@ -558,28 +569,58 @@ footer a:hover {
 
 @media (max-width: 768px) {
     .header-container {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 15px 10px;
+        padding: 15px 10px 0px 15px;
         width: 100%;
     }
     
     .logo h1 {
-        margin-bottom: 10px;
-        text-align: center;
+        display: none; /* 手機尺寸時隱藏標題 */
+    }
+    
+    /* 顯示漢堡菜單按鈕 */
+    .menu-toggle {
+        display: block;
+    }
+    
+    /* 修改導航欄樣式為垂直下拉 */
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: #0c52a9;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        padding: 80px 20px 20px;
+        overflow-y: auto;
+        transition: right 0.3s ease;
+        z-index: 99;
+    }
+    
+    .main-nav.active {
+        right: 0;
     }
     
     .main-nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .main-nav li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 10px;
     }
     
     .main-nav a {
-        font-size: 14px;
-        padding: 5px 8px;
+        font-size: 16px;
+        padding: 8px 0;
+        width: 100%;
+        display: block;
     }
     
     .person-block {
@@ -1088,7 +1129,7 @@ body main {
 
 .video-wrapper {
     max-width: 800px;         /* 最大寬度限制，可依需要調整 */
-    margin: 0 auto;           /* 左右置中 */
+    margin: 0 ;           /* 左右置中 */
     padding: 0 16px;          /* RWD 留白，防止太靠邊 */
     box-sizing: border-box;
     position: relative;
@@ -1107,3 +1148,75 @@ body main {
     top: 0;
     left: 0;
   }
+
+/* 菜單遮罩 */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 98;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (min-width: 769px) {
+    .menu-overlay {
+        display: none;
+    }
+    
+    .main-nav {
+        display: block !important;
+        position: static !important;
+        width: auto !important;
+        height: auto !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        overflow: visible !important;
+        right: 0 !important;
+    }
+    
+    .main-nav ul {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 20px !important;
+    }
+    
+    .main-nav li {
+        width: auto !important;
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+    }
+    
+    .main-nav a {
+        color: #fff !important;
+        font-weight: 500 !important;
+        padding: 5px 10px !important;
+        display: block !important;
+        font-size: 16px !important;
+        transition: color 0.3s !important;
+        width: auto !important;
+    }
+}
+
+@media (max-width: 480px) {
+    header{
+        background-color: #0c52a9;
+    }
+    .menu-toggle .material-icons {
+        font-size: 24px;
+    }
+    
+    .main-nav {
+        width: 50%;
+    }
+}
