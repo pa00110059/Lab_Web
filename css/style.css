@@ -52,7 +52,7 @@ header.scrolled {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding:  10px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -572,12 +572,8 @@ footer a:hover {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 15px 10px 0px 15px;
+        padding: 10px 10px ;
         width: 100%;
-    }
-    
-    .logo h1 {
-        display: none; /* 手機尺寸時隱藏標題 */
     }
     
     /* 顯示漢堡菜單按鈕 */
