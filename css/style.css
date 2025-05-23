@@ -480,8 +480,8 @@ main {
 }
 
 .person-block .person-image {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     margin-right: 30px;
     flex-shrink: 0;
     border-radius: 8px;
@@ -498,8 +498,20 @@ main {
     flex: 1;
 }
 
+.person-block .person-info a{
+    text-decoration: underline;
+}
+
+
 .person-block .person-info h4 {
     font-size: 20px;
+    margin-bottom: 12px;
+    color: #1a73e8;
+    font-weight: 500;
+}
+
+.person-block .person-info h5 {
+    font-size: 16px;
     margin-bottom: 15px;
     color: #1a73e8;
     font-weight: 500;
