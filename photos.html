@@ -66,16 +66,20 @@
                             <div class="gallery-caption">Hydra under fluorescent microscope showing nanos::EGFP expression</div>
                         </div>
                         <div class="gallery-item">
-                            <img src="images/Life-cycle-stages-of-Aurelia-A-Life-cycle-scheme-depicting-sexual-reproduction-of.png" alt="Aurelia Life Cycle" class="gallery-image">
-                            <div class="gallery-caption">Life cycle stages of Aurelia jellyfish showing polyp, strobila and ephyra stages</div>
+                            <img src="images/life_cycle2.jpg" alt="Aurelia Life Cycle" class="gallery-image">
+                            <div class="gallery-caption">Typical metagenetic life cycle of medusozoans (Aurelia) </div>
                         </div>
                         <div class="gallery-item">
                             <img src="images/fig-2-full.png" alt="Interstitial stem cells" class="gallery-image">
                             <div class="gallery-caption">Interstitial stem cells visualized with fluorescent markers</div>
                         </div>
                         <div class="gallery-item">
-                            <img src="images/24835124_m.jpg" alt="Marine organism" class="gallery-image">
-                            <div class="gallery-caption">Marine sample collection from our field work in Taiwan's coastal waters</div>
+                            <img src="images/exper 2024-11-14 142859.jpg" alt="Lab meeting" class="gallery-image">
+                            <div class="gallery-caption">Weekly lab meeting with team members discussing recent results</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/MAX_DAPI_Pha_AcTub_FMRF_10x_smallEphyra_flip-1_kk.jpg" alt="Sequencing prep" class="gallery-image">
+                            <div class="gallery-caption">MAX_DAPI_Pha_AcTub_Ephyra</div>
                         </div>
                     </div>
                 </div>
@@ -84,20 +88,24 @@
                     <h3>Lab Activities</h3>
                     <div class="gallery-container">
                         <div class="gallery-item">
-                            <img src="images/exper 2024-11-14 142859.jpg" alt="Lab meeting" class="gallery-image">
-                            <div class="gallery-caption">Weekly lab meeting with team members discussing recent results</div>
+                            <img src="images/presentation.jpg" alt="Presentation" class="gallery-image">
+                            <div class="gallery-caption">Presentation</div>
                         </div>
                         <div class="gallery-item">
-                            <img src="images/MAX_DAPI_Pha_AcTub_FMRF_10x_smallEphyra_flip-1_kk.jpg" alt="Sequencing prep" class="gallery-image">
-                            <div class="gallery-caption">Preparing samples for next-generation sequencing</div>
+                            <img src="images/presentation2.jpg" alt="visitors" class="gallery-image">
+                            <div class="gallery-caption">Group photo of NYCU visitors</div>
                         </div>
                         <div class="gallery-item">
-                            <img src="images/24835124_m.jpg" alt="Microscopy session" class="gallery-image">
-                            <div class="gallery-caption">Microscopy session examining jellyfish development</div>
+                            <img src="images/open_day.JPG" alt="Microscopy session" class="gallery-image">
+                            <div class="gallery-caption">ICOB open day</div>
                         </div>
                         <div class="gallery-item">
-                            <img src="images/24835124_m.jpg" alt="Field work" class="gallery-image">
-                            <div class="gallery-caption">Field work collecting marine specimens</div>
+                            <img src="images/Introduction_to_visitors.jpg" alt="Introduction to visitors" class="gallery-image">
+                            <div class="gallery-caption">Introduction to visitors</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/Introduction_to_kids.JPG" alt="Introduction to kids" class="gallery-image">
+                            <div class="gallery-caption">Introduction to kids</div>
                         </div>
                     </div>
                 </div>
@@ -121,6 +129,7 @@
                             <img src="images/24835124_m.jpg" alt="Workshop" class="gallery-image">
                             <div class="gallery-caption">Bioinformatics workshop led by lab members</div>
                         </div>
+                        
                     </div>
                 </div>
                 
@@ -128,8 +137,8 @@
                     <h3>Our Facilities</h3>
                     <div class="gallery-container">
                         <div class="gallery-item">
-                            <img src="images/24835124_m.jpg" alt="Main lab" class="gallery-image">
-                            <div class="gallery-caption">Main laboratory space at Academia Sinica</div>
+                            <img src="images/microscope.JPG" alt="microscope" class="gallery-image">
+                            <div class="gallery-caption">Microscope</div>
                         </div>
                         <div class="gallery-item">
                             <img src="images/24835124_m.jpg" alt="Aquarium system" class="gallery-image">
@@ -145,18 +154,18 @@
                         </div>
                     </div>
                 </div>
+               
+                <!-- 修正YouTube影片的響應式顯示 -->
+                
                 <div class="gallery-category">
                     <h3>Jerryfish Culture</h3>
                     <div class="video-wrapper">
-                        <video class="responsive-video" controls>
-                            <source src="videos/Jerryfish National Museum of Marine Biology and Aquarium.mp4" type="video/mp4">
-                            您的瀏覽器不支援 HTML5 影片播放。
+                        <video class="responsive-video" controls autoplay muted>
+                            <source src="videos/IMG_4354.MOV" type="video/mp4">
+                            您的瀏覽器不支援 HTML5 影片播放
                         </video>
                     </div>
-                    <p class="gallery-caption" style="text-align: center; margin-top: 65%; padding: 10px;">Jerryfish culture at National Museum of Marine Biology and Aquarium</p>
                 </div>
-                
-                <!-- 修正YouTube影片的響應式顯示 -->
                 <div class="gallery-category">
                     <h3>Related Videos</h3>
                     <div class="video-wrapper">
@@ -165,6 +174,7 @@
                 </div>
             </div>
         </section>
+        
     </main>
 
     <footer>
@@ -177,6 +187,13 @@
             <p>臺北市南港區研究院路二段128號</p>
         </div>
     </footer>
+
+    <!-- 燈箱結構 -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" src="" alt="">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
 
     <script src="js/main.js"></script>
 </body>

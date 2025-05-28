@@ -685,10 +685,17 @@ footer a:hover {
         max-width: 500px;
         margin-left: auto;
         margin-right: auto;
+        gap: 15px;
     }
     
     .gallery-item {
         max-width: 100%;
+        height: 220px; /* 手機版稍微小一點 */
+    }
+    
+    .gallery-image {
+        width: 100%;
+        height: 100%;
     }
     
     /* YouTube 影片響應式設計 */
@@ -733,6 +740,17 @@ footer a:hover {
     /* 更好的移動裝置體驗 */
     .gallery-container {
         gap: 15px;
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+    
+    .gallery-item {
+        height: 200px; /* 小螢幕版本更小一點 */
+    }
+    
+    .gallery-image {
+        width: 100%;
+        height: 100%;
     }
     
     .video-wrapper {
@@ -1009,9 +1027,10 @@ body main {
 /* 照片集相關樣式 */
 .gallery-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
     margin-top: 30px;
+    align-items: start;
 }
 
 .gallery-item {
@@ -1020,8 +1039,9 @@ body main {
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    height: 0;
-    padding-bottom: 75%; /* 維持4:3比例 */
+    /* 設定固定高度讓所有照片大小一致 */
+    height: 300px;
+    background-color: #fff;
 }
 
 .gallery-item:hover {
@@ -1030,13 +1050,12 @@ body main {
 }
 
 .gallery-image {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     transition: transform 0.5s ease;
+    display: block;
 }
 
 .gallery-item:hover .gallery-image {
@@ -1052,12 +1071,13 @@ body main {
     padding: 15px;
     color: white;
     font-size: 14px;
-    opacity: 0;
-    transform: translateY(20px);
+    opacity: 1; /* 永遠顯示，不透明 */
+    transform: translateY(0); /* 永遠在正確位置 */
     transition: all 0.3s ease;
 }
 
 .gallery-item:hover .gallery-caption {
+    /* 移除hover效果，因為現在永遠顯示 */
     opacity: 1;
     transform: translateY(0);
 }
@@ -1226,5 +1246,93 @@ body main {
     
     .main-nav {
         width: 50%;
+    }
+}
+
+/* 燈箱樣式 */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+}
+
+.lightbox.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    animation: lightboxFadeIn 0.3s ease-out;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    transition: color 0.3s ease;
+}
+
+.lightbox-close:hover {
+    color: #ccc;
+}
+
+.lightbox-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    max-width: 80%;
+    text-align: center;
+}
+
+@keyframes lightboxFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 讓gallery圖片可點擊 */
+.gallery-image {
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .lightbox-close {
+        font-size: 30px;
+        top: 15px;
+        right: 20px;
+    }
+    
+    .lightbox-caption {
+        font-size: 14px;
+        bottom: 15px;
+        padding: 8px 15px;
     }
 }

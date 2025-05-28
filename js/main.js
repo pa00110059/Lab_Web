@@ -68,4 +68,59 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 監聽滾動事件
     window.addEventListener('scroll', checkScroll);
-}); 
+    
+    // 燈箱功能
+    initLightbox();
+});
+
+// 燈箱功能
+function initLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    const galleryImages = document.querySelectorAll('.gallery-image');
+    
+    if (!lightbox || !lightboxImg || !lightboxCaption || !lightboxClose) {
+        return; // 如果不在gallery頁面就退出
+    }
+    
+    // 為每個gallery圖片添加點擊事件
+    galleryImages.forEach(img => {
+        img.addEventListener('click', function() {
+            const caption = this.parentElement.querySelector('.gallery-caption');
+            
+            // 設置燈箱圖片和說明
+            lightboxImg.src = this.src;
+            lightboxImg.alt = this.alt;
+            lightboxCaption.textContent = caption ? caption.textContent : '';
+            
+            // 顯示燈箱
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // 禁止背景滾動
+        });
+    });
+    
+    // 關閉燈箱的函數
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = ''; // 恢復背景滾動
+    }
+    
+    // 點擊關閉按鈕關閉燈箱
+    lightboxClose.addEventListener('click', closeLightbox);
+    
+    // 點擊燈箱背景關閉燈箱
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+    
+    // 按ESC鍵關閉燈箱
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            closeLightbox();
+        }
+    });
+} 
