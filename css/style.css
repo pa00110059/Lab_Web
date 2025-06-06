@@ -399,11 +399,13 @@ main {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+    align-items: flex-start;
 }
 
 .research-image {
     flex: 1;
     min-width: 300px;
+    max-width: 400px;
 }
 
 .research-image img {
@@ -411,6 +413,7 @@ main {
     height: auto;
     border-radius: 5px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: block;
 }
 
 .research-details {
@@ -568,10 +571,17 @@ footer a:hover {
     
     .research-content {
         flex-direction: column;
+        gap: 25px;
     }
     
     .research-image {
-        margin-bottom: 20px;
+        margin-bottom: 0;
+        max-width: 100%;
+        align-self: center;
+    }
+    
+    .research-details {
+        min-width: 100%;
     }
     
     .research-showcase {
@@ -675,6 +685,15 @@ footer a:hover {
         font-size: 22px;
     }
     
+    .research-content {
+        gap: 20px;
+    }
+    
+    .research-image {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
     .research-showcase {
         grid-template-columns: 1fr;
     }
@@ -726,6 +745,24 @@ footer a:hover {
     
     .research-item {
         margin-bottom: 20px;
+    }
+    
+    .research-content {
+        gap: 15px;
+    }
+    
+    .research-image {
+        max-width: 100%;
+        margin: 0 auto 15px;
+    }
+    
+    .research-area {
+        margin-bottom: 30px;
+    }
+    
+    .research-area h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
     }
     
     .main-nav ul {
