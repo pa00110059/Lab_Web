@@ -1373,3 +1373,9 @@ body main {
         padding: 8px 15px;
     }
 }
+
+.link-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 6px;
+}
