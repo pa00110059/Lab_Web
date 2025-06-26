@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://jellyfish.icob.sinica.edu.tw/sitemap.xml
+
+# Allow access to CSS and JS files
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Disallow access to certain directories if needed
+# Disallow: /.git/
+# Disallow: /.idea/
+
+# Crawl-delay (optional, in seconds)
+Crawl-delay: 1 
